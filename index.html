@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krown - Premium Streetwear Leasing</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+cursor: none;
+}
+.custom-cursor {
+position: fixed;
+width: 10px;
+height: 10px;
+background-color: #D4AF37;
+border-radius: 50%;
+pointer-events: none;
+z-index: 9999;
+transform: translate(-50%, -50%);
+transition: width 0.2s, height 0.2s;
+mix-blend-mode: difference;
+}
+.custom-cursor.hover {
+width: 20px;
+height: 20px;
+background-color: #D4AF37;
+}
+.heading-font {
+font-family: 'Cinzel', serif;
+}
+.gold-text {
+color: #D4AF37;
+}
+.gold-bg {
+background-color: #D4AF37;
+}
+.gold-border {
+border-color: #D4AF37;
+}
+.gold-btn {
+background-color: #D4AF37;
+color: #000;
+transition: all 0.3s ease;
+}
+.gold-btn:hover {
+background-color: #000;
+color: #D4AF37;
+border: 1px solid #D4AF37;
+}
+.outline-btn {
+background-color: transparent;
+color: #D4AF37;
+border: 1px solid #D4AF37;
+transition: all 0.3s ease;
+}
+.outline-btn:hover {
+background-color: #D4AF37;
+color: #000;
+}
+.category-card {
+transition: transform 0.3s ease;
+}
+.category-card:hover {
+transform: translateY(-5px);
+}
+.smooth-scroll {
+scroll-behavior: smooth;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #D4AF37;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 1px;
+bottom: -2px;
+left: 0;
+background-color: #D4AF37;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.hero-section {
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+}
+.hero-overlay {
+background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.5) 100%);
+}
+.step-item {
+position: relative;
+}
+.step-item:not(:last-child)::after {
+content: '';
+position: absolute;
+top: 40px;
+right: -50%;
+width: 100%;
+height: 1px;
+background-color: #D4AF37;
+}
+@media (max-width: 768px) {
+.step-item:not(:last-child)::after {
+display: none;
+}
+}
+</style>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#D4AF37',secondary:'#000000'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+</head>
+<body class="bg-white text-gray-900 smooth-scroll">
+<div class="custom-cursor"></div>
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center">
+<img src="https://static.readdy.ai/image/6df14fd8c1ccb217ed70205d60555b58/f992ce52c91615dd1e1e0ff1d715be6c.png" alt="Krown Logo" class="h-10">
+<span class="heading-font text-2xl font-bold ml-2 gold-text">KROWN</span>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#home" class="nav-link text-white hover:gold-text">Home</a>
+<a href="#about" class="nav-link text-white hover:gold-text">About</a>
+<a href="#collection" class="nav-link text-white hover:gold-text">Collection</a>
+<a href="#how-it-works" class="nav-link text-white hover:gold-text">How It Works</a>
+<a href="#contact" class="nav-link text-white hover:gold-text">Contact</a>
+</nav>
+<div class="md:hidden w-8 h-8 flex items-center justify-center cursor-pointer" id="mobile-menu-button">
+<i class="ri-menu-line text-white ri-2x"></i>
+</div>
+</div>
+<div class="mobile-menu hidden bg-black w-full absolute top-full left-0 py-4 px-6 md:hidden" id="mobile-menu">
+<div class="flex flex-col space-y-4">
+<a href="#home" class="text-white hover:gold-text py-2">Home</a>
+<a href="#about" class="text-white hover:gold-text py-2">About</a>
+<a href="#collection" class="text-white hover:gold-text py-2">Collection</a>
+<a href="#how-it-works" class="text-white hover:gold-text py-2">How It Works</a>
+<a href="#contact" class="text-white hover:gold-text py-2">Contact</a>
+</div>
+</div>
+</header>
+<section id="home" class="hero-section min-h-screen flex items-center relative" style="background-image: url('https://readdy.ai/api/search-image?query=Luxury%20abstract%20background%20with%20black%20and%20gold%20geometric%20patterns%2C%20premium%20dark%20aesthetic%2C%20elegant%20royal%20design%20elements%2C%20modern%20minimalist%20composition%2C%20sophisticated%20high-end%20ambiance%2C%20dramatic%20lighting%2C%20rich%20textures%2C%20no%20human%20elements%2C%20professional%20artistic%20photography&width=1920&height=1080&seq=2&orientation=landscape')">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-6 z-10">
+<div class="max-w-2xl">
+<div class="mb-6">
+<img src="https://public.readdy.ai/ai/img_res/51b223f0-f3fc-4a7b-9dae-94fac877288e.jpg" alt="Krown Logo" class="h-20 mb-4">
+<h1 class="heading-font text-5xl md:text-7xl font-bold text-white mb-2">KROWN</h1>
+<h2 class="heading-font text-3xl md:text-4xl gold-text font-bold mb-4">Live Like a King</h2>
+<p class="text-gray-200 text-xl mb-8">Premium streetwear for the modern royalty.</p>
+</div>
+<button class="gold-btn !rounded-button px-8 py-3 font-semibold text-lg whitespace-nowrap">Shop Now</button>
+</div>
+</div>
+</section>
+<section id="about" class="py-24 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<h2 class="heading-font text-4xl font-bold mb-6">About <span class="gold-text">Krown</span></h2>
+<p class="text-lg mb-6">At Krown, we're redefining premium streetwear. Our mission is simple: provide exceptional quality, fashion-forward clothing that makes you stand out from the crowd.</p>
+<p class="text-lg mb-6">We believe in creating pieces that not only reflect your unique style but also maintain the highest standards of quality and design. Each item in our collection is carefully crafted to ensure you always look and feel your best.</p>
+<p class="text-lg">Our curated collection features the most coveted streetwear pieces, allowing you to dress like royalty. Quality, style, and exclusivity – that's the Krown promise.</p>
+</div>
+<div class="md:w-1/2">
+<img src="https://static.readdy.ai/image/6df14fd8c1ccb217ed70205d60555b58/0dc5f7312adf21ca1ca57f5433831230.jpeg" alt="About Krown" class="w-full h-auto rounded-lg shadow-xl">
+</div>
+</div>
+</div>
+</section>
+<section id="collection" class="py-24 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="heading-font text-4xl font-bold text-center mb-16">Our <span class="gold-text">Collection</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="category-card bg-white rounded-lg overflow-hidden shadow-lg">
+<div class="h-80 overflow-hidden">
+<img src="https://static.readdy.ai/image/6df14fd8c1ccb217ed70205d60555b58/134fe69eb751cdb3bb03e568f1c8a600.jpeg" alt="Hoodies" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="heading-font text-2xl font-bold mb-2">Hoodies</h3>
+<p class="text-gray-600 mb-4">Premium oversized hoodies with unique designs and exceptional quality.</p>
+<a href="#contact" class="gold-btn !rounded-button px-6 py-2 font-semibold whitespace-nowrap inline-block">Shop Now</a>
+</div>
+</div>
+<div class="category-card bg-white rounded-lg overflow-hidden shadow-lg">
+<div class="h-80 overflow-hidden">
+<img src="https://static.readdy.ai/image/6df14fd8c1ccb217ed70205d60555b58/0dc5f7312adf21ca1ca57f5433831230.jpeg" alt="T-Shirts" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="heading-font text-2xl font-bold mb-2">T-Shirts</h3>
+<p class="text-gray-600 mb-4">Stylish graphic tees made from the finest materials for ultimate comfort.</p>
+<a href="#contact" class="gold-btn !rounded-button px-6 py-2 font-semibold whitespace-nowrap inline-block">Shop Now</a>
+</div>
+</div>
+<div class="category-card bg-white rounded-lg overflow-hidden shadow-lg">
+<div class="h-80 overflow-hidden">
+<img src="https://static.readdy.ai/image/6df14fd8c1ccb217ed70205d60555b58/5fb490e4842838d61eb00a1166684e35.png" alt="Crewnecks" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="heading-font text-2xl font-bold mb-2">Crewnecks</h3>
+<p class="text-gray-600 mb-4">Luxurious crewneck sweaters that combine style with exceptional comfort.</p>
+<a href="#contact" class="gold-btn !rounded-button px-6 py-2 font-semibold whitespace-nowrap inline-block">Shop Now</a>
+</div>
+</div>
+<div class="category-card bg-white rounded-lg overflow-hidden shadow-lg">
+<div class="h-80 overflow-hidden">
+<img src="https://static.readdy.ai/image/6df14fd8c1ccb217ed70205d60555b58/9df07bc2550457753b7b6ace0b1e0a80.png" alt="Long Sleeve Shirts" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="heading-font text-2xl font-bold mb-2">Long Sleeve Shirts</h3>
+<p class="text-gray-600 mb-4">Elegant long sleeve designs that make a statement in any season.</p>
+<a href="#contact" class="gold-btn !rounded-button px-6 py-2 font-semibold whitespace-nowrap inline-block">Shop Now</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-it-works" class="py-24 bg-black text-white">
+<div class="container mx-auto px-6">
+<h2 class="heading-font text-4xl font-bold text-center mb-16">How It <span class="gold-text">Works</span></h2>
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4">
+<div class="step-item flex flex-col items-center text-center md:w-1/3">
+<div class="w-20 h-20 gold-bg rounded-full flex items-center justify-center mb-6">
+<i class="ri-t-shirt-line ri-xl"></i>
+</div>
+<h3 class="heading-font text-2xl font-bold mb-3">Choose Your Item</h3>
+<p class="text-gray-300">Browse our premium collection and select the pieces that match your style.</p>
+</div>
+<div class="step-item flex flex-col items-center text-center md:w-1/3">
+<div class="w-20 h-20 gold-bg rounded-full flex items-center justify-center mb-6">
+<i class="ri-shopping-cart-line ri-xl"></i>
+</div>
+<h3 class="heading-font text-2xl font-bold mb-3">Add to Cart</h3>
+<p class="text-gray-300">Select your size and quantity for each item you want to purchase.</p>
+</div>
+<div class="step-item flex flex-col items-center text-center md:w-1/3">
+<div class="w-20 h-20 gold-bg rounded-full flex items-center justify-center mb-6">
+<i class="ri-message-3-line ri-xl"></i>
+</div>
+<h3 class="heading-font text-2xl font-bold mb-3">Contact Us</h3>
+<p class="text-gray-300">Reach out through our contact channels to confirm your order details.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-24 bg-white">
+<div class="container mx-auto px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="heading-font text-4xl font-bold mb-12">Get In <span class="gold-text">Touch</span></h2>
+<p class="text-xl mb-8">For orders and pricing, contact us via:</p>
+<div class="flex flex-col md:flex-row justify-center gap-8 mb-12">
+<a href="https://instagram.com/hasan._._" class="flex items-center gap-3 gold-text hover:text-black transition-colors">
+<div class="w-10 h-10 flex items-center justify-center border gold-border rounded-full">
+<i class="ri-instagram-line"></i>
+</div>
+<span>@hasan._._</span>
+</a>
+<a href="https://wa.me/14036202078" class="flex items-center gap-3 gold-text hover:text-black transition-colors">
+<div class="w-10 h-10 flex items-center justify-center border gold-border rounded-full">
+<i class="ri-whatsapp-line"></i>
+</div>
+<span>+1 403-620-2078</span>
+</a>
+<a href="mailto:H.ahmed1237869@gmail.com" class="flex items-center gap-3 gold-text hover:text-black transition-colors">
+<div class="w-10 h-10 flex items-center justify-center border gold-border rounded-full">
+<i class="ri-mail-line"></i>
+</div>
+<span>H.ahmed1237869@gmail.com</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-black text-white py-12">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="flex items-center mb-6 md:mb-0">
+<img src="https://static.readdy.ai/image/6df14fd8c1ccb217ed70205d60555b58/f992ce52c91615dd1e1e0ff1d715be6c.png" alt="Krown Logo" class="h-10 brightness-0 invert">
+<span class="heading-font text-2xl font-bold ml-2">KROWN</span>
+</div>
+<div class="flex gap-6 mb-6 md:mb-0">
+<a href="https://instagram.com/hasan._._" class="w-10 h-10 flex items-center justify-center border gold-border rounded-full hover:gold-bg transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="https://wa.me/14036202078" class="w-10 h-10 flex items-center justify-center border gold-border rounded-full hover:gold-bg transition-colors">
+<i class="ri-whatsapp-line"></i>
+</a>
+<a href="mailto:H.ahmed1237869@gmail.com" class="w-10 h-10 flex items-center justify-center border gold-border rounded-full hover:gold-bg transition-colors">
+<i class="ri-mail-line"></i>
+</a>
+</div>
+<div class="text-gray-400 text-sm">
+© 2025 Krown. All rights reserved.
+</div>
+</div>
+</div>
+</footer>
+<script id="navbar-script">
+document.addEventListener('DOMContentLoaded', function() {
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+navbar.classList.add('bg-black');
+navbar.classList.remove('py-4');
+navbar.classList.add('py-2');
+} else {
+navbar.classList.remove('bg-black');
+navbar.classList.add('py-4');
+navbar.classList.remove('py-2');
+}
+});
+});
+</script>
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+mobileMenuLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+});
+});
+});
+</script>
+<script id="custom-cursor-script">
+document.addEventListener('DOMContentLoaded', function() {
+const cursor = document.querySelector('.custom-cursor');
+document.addEventListener('mousemove', function(e) {
+cursor.style.left = e.clientX + 'px';
+cursor.style.top = e.clientY + 'px';
+});
+const hoverElements = document.querySelectorAll('a, button, input, textarea, .category-card');
+hoverElements.forEach(element => {
+element.addEventListener('mouseenter', function() {
+cursor.classList.add('hover');
+});
+element.addEventListener('mouseleave', function() {
+cursor.classList.remove('hover');
+});
+});
+});
+</script>
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
